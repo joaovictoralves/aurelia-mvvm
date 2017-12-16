@@ -1,6 +1,9 @@
 # intellij files
 .ideia/
 
+# visual studio files
+.vscode/
+
 # node files
 node_modules/
 package-lock.json
