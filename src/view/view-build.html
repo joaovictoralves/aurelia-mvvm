@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<template>
+  <require from="./account-register"></require>
+
+  <section class="view-build">
+    <aubs-tabset vertical.bind="tab.vertical" type.bind="tab.type" active.bind="tab.active">
+      <aubs-tab header="Registrar">
+        <section class="account-register">
+          <account-register account.bind="accounts"></account-register>
+        </section>
+      </aubs-tab>
+      <aubs-tab header="Extrato" disabled.bind="tab.disabled">
+        Extrato 
+      </aubs-tab>
+    </aubs-tabset>
+  </section>
+</template>

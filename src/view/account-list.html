@@ -1,0 +1,13 @@
+<template>
+    <div class="ui segment">
+        <ul>
+            <li repeat.for="account of accounts">
+                <strong class="caixa">${accounts.caixa}</strong>
+                <span class="tipo">${accounts.tipo | tipo}</span>
+                <span class="valor">${accounts.valor | valor}</span>
+                <span class="descricao">${accounts.descricao | descricao}</span>
+                <span class="data">${accounts.data | data}</span>
+            </li>
+        </ul>
+    </div>
+</template>
