@@ -1,4 +1,3 @@
-import { bindable } from 'aurelia-framework';
 import { Account } from '../viewmodel/account';
 import { Filter } from '../viewmodel/filter';
 
@@ -11,31 +10,24 @@ export class AccountList {
   dataInvertidaf: string = "";
   registra: boolean = true;
   account: Account;
-  @bindable
   accounts: Account[] = [];
-
-  constructor() {
-    localStorage.clear();
-    localStorage.setItem("qtdeItens","0");
-  }
 
   updateList() {
     this.registra = true;
     this.qtdeContas = Number(localStorage.getItem("qtdeItens"));
     this.accounts = []
     for (this.cont = 1; this.cont <= this.qtdeContas; this.cont++) {
-      console.log("ac" + this.cont);
       this.account = JSON.parse(localStorage.getItem("ac" + this.cont));
       this.dataInvertida = this.invertData(this.account.data);
       this.dataInvertidai = this.invertData2(this.filtro.datai);
       this.dataInvertidaf = this.invertData2(this.filtro.dataf);
       if ((Number(this.dataInvertida) >= Number(this.dataInvertidai)) &&
         (Number(this.dataInvertida) <= Number(this.dataInvertidaf))) {
-          console.log("Passou1");
-          if (Number(this.account.caixa) == Number(this.filtro.caixa)) {} else this.registra = false;
+        if (Number(this.filtro.caixa) > 0) { 
+          if (Number(this.account.caixa) == Number(this.filtro.caixa)) { } else this.registra = false;
+        }
       } else this.registra = false;
       if (this.registra) {
-        console.log("Registra");
         this.accounts.push(this.account);
       } else this.registra = true;
     }
