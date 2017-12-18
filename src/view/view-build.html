@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <template>
   <require from="./account-register"></require>
+  <require from="./account-list"></require>
 
   <section class="view-build">
     <aubs-tabset vertical.bind="tab.vertical" type.bind="tab.type" active.bind="tab.active">
       <aubs-tab header="Registrar">
         <section class="account-register">
-          <account-register account.bind="accounts"></account-register>
+          <account-register accounts.bind="accounts"></account-register>
         </section>
       </aubs-tab>
-      <aubs-tab header="Extrato" disabled.bind="tab.disabled">
-        Extrato 
+      <aubs-tab header="Extrato" disabled="tab.disabled">
+        <section class="account-list">
+          <account-list accounts.bind="accounts"></account-list>
+        </section>
       </aubs-tab>
     </aubs-tabset>
   </section>

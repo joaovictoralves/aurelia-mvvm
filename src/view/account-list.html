@@ -1,13 +1,40 @@
+<!DOCTYPE html>
 <template>
     <div class="ui segment">
-        <ul>
-            <li repeat.for="account of accounts">
-                <strong class="caixa">${accounts.caixa}</strong>
-                <span class="tipo">${accounts.tipo | tipo}</span>
-                <span class="valor">${accounts.valor | valor}</span>
-                <span class="descricao">${accounts.descricao | descricao}</span>
-                <span class="data">${accounts.data | data}</span>
-            </li>
-        </ul>
+        <form class="ui form" submit.delegate="updateList()">
+            <div class="fields">
+                <div>
+                    <label for="caixa" style="position: 100px">Caixa</label>
+                    <input type="number" id="caixa" value.bind="filtro.caixa" style="width: 70px">
+                </div>
+                <div>
+                    <label for="periodoi">Período</label>
+                    <input type="date" id="periodoi" value.bind="filtro.datai" style="width: 170px">
+                    <label for="periodof"> a </label>
+                    <input type="date" id="periodof" value.bind="filtro.dataf" style="width: 170px">
+                </div>
+                <div>
+                    <ui-button type="submit" text="Filtrar" theme="primary"></ui-button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div>
+        <table style="width:100%">
+            <tr>
+                <th>Caixa</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Descrição</th>
+                <th>Data de Cadastro</th>
+            </tr>
+            <tr repeat.for="account of accounts" style="text-align: center">
+                <td>${account.caixa}</td>
+                <td>${account.tipo}</td>
+                <td>${account.valor}</td>
+                <td>${account.descricao}</td>
+                <td>${account.data}</td>
+            </tr>
+        </table>
     </div>
 </template>

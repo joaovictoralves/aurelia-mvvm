@@ -64,6 +64,7 @@
           "aurelia-task-queue",
           "aurelia-templating",
           "aurelia-templating-binding",
+          "moment",
           "velocity-animate",
           "tether",
           {

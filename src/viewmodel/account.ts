@@ -1,3 +1,4 @@
+import * as moment from 'moment';
 
 export class Account {
   constructor(
@@ -5,5 +6,5 @@ export class Account {
     public tipo: number = 0,
     public valor: number = 0,
     public descricao: string = "",
-    public data: Date = new Date()){}
+    public data: string = moment().format().substring(0,10)){}
 }

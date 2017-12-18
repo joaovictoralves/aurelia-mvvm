@@ -1,30 +1,31 @@
+<!DOCTYPE html>
 <template>
     <div class="ui segment">
-        <ui-form submit.delegate="addAccount()">
+        <form class="ui form" submit.delegate="addAccount()">
             <ui-field>
                 <label for="caixa">Caixa</label>
-                <input type="number" id="caixa" value.bind="accounts.caixa" style="width: 100px">
+                <input type="number" id="caixa" value.bind="account.caixa" style="width: 100px">
             </ui-field>
             <ui-field>
                 <label for="tipo">Tipo</label>
-                <select type="text" id="tipo" value.bind="accounts.tipo" style="width: 150px;">
+                <select type="text" id="tipo" value.bind="account.tipo" style="width: 150px;">
                     <option value="1">Crédito</option>
                     <option value="2">Debito</option>
                 </select>
             </ui-field>
             <ui-field>
                 <label for="valor">Valor</label>
-                <input type="number" placeholder="0,00" id="valor" value.bind="accounts.valor" style="width: 100px">
+                <input type="number" placeholder="0,00" id="valor" value.bind="account.valor" style="width: 100px">
             </ui-field>
             <ui-field>
                     <label for="descricao">Descricao</label>
-                    <input type="text" placeholder="Ex: Conta da Suiça" id="descricao" value.bind="accounts.descricao" style="width: 600px">
+                    <input type="text" placeholder="Ex: Conta da Suiça" id="descricao" value.bind="account.descricao" style="width: 600px">
                 </ui-field>
             <ui-field>
                 <label for="data">Data do Lançamento</label>
-                <input type="date" id="data" value.bind="accounts.data" style="width: 400px">
+                <input type="date" id="data" value.bind="account.data" style="width: 400px">
             </ui-field>
             <ui-button type="submit" text="Salvar" theme="primary"></ui-button>
-        </ui-form>
+        </form>
     </div>
 </template>

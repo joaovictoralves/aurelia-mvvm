@@ -1,7 +1,7 @@
 export class Tabs {
     constructor(
-    disabled: boolean = false,
-    vertical: boolean = false,
-    type: string = 'pills',
-    active: number = 2){}
+    public disabled: boolean = false,
+    public vertical: boolean = false,
+    public type: string = 'pills',
+    public active: number = 2 ){}
 }
